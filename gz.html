@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>과제평가1</title>
+	<style>
+		@font-face {font-family: 'GmarketSansBold';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight: normal;font-style: normal;}
+
+		@font-face {font-family: 'GmarketSansLight';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-weight: normal;font-style: normal;}
+
+
+		@font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
+
+		html{font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
+		body,h1,h2,p,div,ul,li{margin: 0; padding: 0;}
+		h1{font-family: 'GmarketSansBold', sans-serif; word-spacing: -1px; font-size: 3em; letter-spacing: -2px; padding-top: 100px}
+		h2{font-family: 'GmarketSansBold', sans-serif; word-spacing: -1px; font-size: 3em; letter-spacing: -1px}
+		nav{margin-bottom: auto}
+		nav ul{margin: auto;}
+		nav ul li{list-style-type: none; width: 25%; height: 40px;}
+		nav ul li a {display: block; line-height: 40px; text-align: center;}
+	 	img {display: block; margin: 0px auto;}
+		
+		footer{padding-top: 40px;}
+		button {margin: 40px;}
+		.custom-btn {width: 160px;height: 40px;color: #fff;border-radius: 50px; padding: 10px 25px;background: transparent;cursor: pointer;transition: all 0.3s ease;position: relative;display: inline-block;}
+
+		.btn-8 {background-color: #EA1953;line-height: 42px;padding: 0;border: none;}
+		.btn-8 span {position: relative;display: block;width: 100%;height: 100%;}
+		.btn-8:before,
+		.btn-8:after {position: absolute;content: "";right: 0;bottom: 0; background: #EA1953;transition: all 0.3s ease;}
+		.btn-8:before{height: 0%;width: 2px;}
+		.btn-8:after {width: 0%;height: 2px;}
+		.btn-8:hover:before {height: 100%;}
+		.btn-8:hover:after {width: 100%;}
+		.btn-8:hover{background: transparent;}
+		.btn-8 span:hover{color: #EA1953;}
+		.btn-8 span:before,.btn-8 span:after {position: absolute;content: "";left: 0;top: 0;background: #EA1953;transition: all 0.3s ease;}
+		.btn-8 span:before {width: 2px;height: 0%;}
+		.btn-8 span:after {height: 2px;width: 0%;}
+		.btn-8 span:hover:before {height: 100%;}
+		.btn-8 span:hover:after {width: 100%;}
+
+		.updown{border: 1px solid; color: black;}
+		.pad{padding-top: 50px;}
+		.pad-u{padding-bottom: 50px;}
+		.we-300{font-weight: 300;}
+		.we-500{font-weight: 500;}
+		.we-700{font-weight: 700;}
+		.jb-wrap {height: 280px;display: flex; align-items: center; border: 1px solid #444444;}
+		.container{display: grid;grid-template-columns: repeat(3, 1fr);grid-template-rows: repeat(3, 1fr);grid-column-gap: 6px;grid-row-gap: 6px;}
+		
+		.item1 {width: 120px; height: 120px; border-radius: 100%; background: orange; margin:0 auto;}
+		.item2 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item3 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item4 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item5 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item6 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item7 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item8 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+		.item9 {width: 120px; height: 120px;border-radius: 100%; background: orange; margin:0 auto;}
+
+		.checks input[type="radio"] + label {font-size: 12px;padding-left: 25px; }
+		.text-center{text-align: center}
+		.text-left{text-align: left;}
+		.text-white{color: white}
+		.all-center{display: flex; justify-content: center; align-items: center; height: 600px;}
+		.p-center{display: flex; justify-content: center; align-items: center;}
+		.bg-gray{background: gray;}
+		.bg-white{background: white;}
+		.bg-orange{background: orange;}
+		.bg-navy{background: navy;}
+		.bg-skyblue{background: skyblue;}
+		.bg-black{background: black;}
+		.bg-gradient{background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);}
+		.h-400{height: 400px}
+		.h-800{height: 800px}
+		.row{width: 1000px; margin: auto; z-index: 2; position: relative}
+		.row div{padding: 20px}
+		.row2{width: 1000px; margin: auto; z-index: 2; position: relative}
+		.row2 div{padding: 20px}
+		.row3{width: 1000px; margin: auto; z-index: 2; position: relative}
+		.row3 div{padding: -10px}
+		.flexbox{display: flex;}
+		.flexbox2{display: flex; justify-content:center; align-items: center}
+		
+		.col-1{width: 16.66%;}
+		.col-2{width: 33.33%;}
+		.col-3{width: 46%; }
+		.col-4{width: 66.66%;}
+		.col-5{width: 83.32%;}
+		.col-6{width: 100%;}
+		.col-7{width: 20%;}
+		.col-8{width: 12%;}
+
+		.wrap{position:relative;}
+		.po-ab{position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% )}
+		.po-ab2{position: absolute;}
+
+   		.comic1{position: absolute;width: 250px; height: 250px; background: white;border-radius: 10px; z-index: 1;left: -110px; top: 39px;}
+   		.comic2{position: absolute; width: 300px; height: 300px;background: white;top: 214px;left: 39px;z-index: 2; border-radius: 10px;}
+   		.comic3{position: absolute;width: 300px;height: 300px;background: white;top: 308px; left: 572px; z-index: 3;border-radius: 10px;}
+   		.comic4{position: absolute;width: 300px; height: 300px;background: white;top: 451px; left: 384px;  z-index: 4; border-radius: 10px;}
+   		.comic5{position: absolute; width: 300px; height: 300px;background: white;top: 60px;left: 429px;z-index: 5; border-radius: 10px;}
+   		.comic6{position: absolute; width: 300px;  height: 300px; background: white;top: 170px; left: 844px;z-index: 6;border-radius: 10px;}
+
+   		.go{background-image: url('go.png'); position: absolute; width: 200px; height: 200px; top: 170px; left: 844px;z-index: 6;border-radius: 10px;}
+   		
+   		.box1{width: 600px; height: 250px; background:  white; border-radius: 30px;margin:0 auto;}
+   		.box2{width: 300px; height: 120px; background: #008454; border-radius: 0px;margin:0 auto;}
+   		.sha{box-shadow: 10px 10px 5px white;}
+
+   		.bubble{position: relative;width: 360px;height: 30px;padding: 0px;background: #FFFFFF;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;}
+   		.bubble:after{content: '';position: absolute;border-style: solid;border-width: 12px 20px 12px 0;border-color: transparent #FFFFFF;display: block;width: 0;z-index: 1;left: -20px;top: 20px;}
+
+      	.bubble2{position: relative;width: 360px;height: 30px;padding: 0px;background: #C41630;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;}
+   		.bubble2:after{content: '';position: absolute;border-style: solid;border-width: 12px 20px 12px 0;border-color: transparent #C41630;display: block;width: 0;z-index: 1;left: -20px;top: 20px;}
+
+      	.bubble3{position: relative;width: 360px;height: 30px;padding: 0px;background: #F4BD0F;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;}
+   		.bubble3:after{content: '';position: absolute;border-style: solid;border-width: 12px 0px 12px 20px;border-color: transparent #F4BD0F;display: block;width: 0;z-index: 1;right: -20px;top: 20px;}
+
+      	.bubble4{position: relative;width: 270px;height: 30px;padding: 0px;background: #F4BD0F;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;}
+   		.bubble4:after{content: '';position: absolute;border-style: solid;border-width: 12px 20px 12px 0px;border-color: transparent #F4BD0F;display: block;width: 0;z-index: 1;left: -15px;top: 22px;}
+
+        .bubble5{position: relative;width: 270px;height: 30px;padding: 0px;background: #008454;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;}
+   		.bubble5:after{content: '';position: absolute;border-style: solid;border-width: 12px 0px 12px 20px;border-color: transparent #008454;display: block;width: 0;z-index: 1;right: -15px;top: 22px;}
+
+		.background-wrap {background-image: url('why.png'); background-size: contain; display: flex; justify-content: center; align-items: center;}
+		.background-wrap2 {background-image: url('problem.png'); background-size: contain; display: flex; justify-content: center; align-items: center;}
+		.background-wrap3 {background-image: url('last.png'); background-size: contain;display: flex; justify-content: center; align-items: center;}
+		.cha {background-image: url('cha.png');}
+		.content {display: flex; flex-direction: column;}
+		.full {height: 1080px;}
+
+		.ani-wiggle{animation: wiggle;}
+
+		@media all and (min-width:780px) { ... }
+	</style>
+</head>
+
+<body>
+	<script> console.log(66.66 + 16.66)</script>
+	<section class="bg-black full">
+		<div class="row">
+			<div class="col-6 text-center">
+				<h1 class="text-white all-center we-700">HOXY... <br>이런 경험 있으신가요?</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="bg-black">
+		<div class="row2 text-center text-white">
+		 	<div class="col-6 p-center">
+		  		<img src="video.png">
+			</div>
+			<p><br>직장인 A씨의 하루_mp4<br><br><br></p>
+		</div>
+	</section>
+
+	<section class="bg-black">
+		<div class="row2 text-center text-white">
+		 	<div class="col-6 p-center">
+		  		<img src="video.png">
+			</div>
+			<p><br>썸붕난 썰 푼다_mp4<br><br><br></p>
+		</div>
+	</section>
+
+	<section class="bg-black">
+		<div class="row text-center">
+		  <div class="col-6 h-800">
+		  	<div class="wrap">
+		  		<div class="comic1"></div>
+		  		<div class="comic2"></div>
+		  		<div class="comic3"></div>
+	  		 	<div class="comic4"></div>
+  		 	  	<div class="comic5"></div>
+	  		 	<div class="comic6"></div>
+		  	</div>
+		  </div>
+		</div>
+	</section>
+
+	<section class="bg-black background-wrap full">
+		<div class="row text-center">
+		  <div class="col-6 text-white content">
+			<h2>혹시 이게 본인 얘기 같다면?!</h2><br>
+				<div class="box1 p-center"><img src="not.png"></div>
+			<br><p>#핵소름 #24시관찰카메라</p>
+		  </div>
+		</div>
+	</section>
+
+	<section class="text-center bg-black" style="background-image: url(bg.png); background-size: contain;">
+		<div class="col-6 text-white">
+			<div class="wrap">
+				<p style="letter-spacing: 20pt; z-index: 3">설마가 사람 잡는다!</p>
+				<div class="po-ab2" style="z-index: 0; top: -100px; left: 500px;"><img src="havo.png" style="width: 200px; height: 200px;"></div>
+		    </div>
+			<h2>성인 ADHD 테스트</h2><br>
+		</div>
+		
+		<div class="col-6">
+			<div class="text-center flexbox2">
+				<div class="col-7 wrap">
+					<p><p class="po-ab">아침에 일어나기<br>힘들다</p><img src="cho1.png" width="200px"></p>
+				</div>
+			
+				<div class="col-1 wrap">
+					<p><p class="po-ab"><br>모임에<br>항상 늦는다.</p><img src="cho2.png"width="200px"></p>
+				</div>
+					
+				<div class="col-7 wrap">
+					<p><p class="po-ab">물건을 하루에도<br>몇번씩 찾는다</p><img src="cho3.png"width="200px"></p>
+				</div>
+			</div>
+
+			<div class="text-center flexbox2">
+				<div class="col-7 wrap">
+					<p><p class="po-ab">영상을 볼때<br>2배속으로<br>시청한다</p><img src="cho4.png" width="200px" height="250px"></p>
+				</div>
+			
+				<div class="col-1 wrap">
+					<p><p class="po-ab">4차원 같다는<br>소리를<br>많이 듣는다</p><img src="cho5.png"width="200px"></p>
+				</div>
+					
+				<div class="col-7 wrap">
+					<p><p class="po-ab">말실수 등으로<br>사람들에게 오해를 자주 받는다</p><img src="cho6.png"width="200px"></p>
+				</div>
+			</div>
+			
+			<div class="text-center flexbox2">
+				<div class="col-7 wrap">
+					<p><p class="po-ab">6개월 이상<br>게임중독에<br>빠진 적 있다</p><img src="cho7.png" width="200px"></p>
+				</div>
+			
+				<div class="col-1 wrap">
+					<p><p class="po-ab">저축을 못하고<br>돈관리가<br>어렵다</p><img src="cho8.png"width="200px"></p>
+				</div>
+					
+				<div class="col-7 wrap">
+					<p><p class="po-ab">유명 맛집이어도<br>웨이팅이 있으면<br>포기한다</p><img src="cho9.png"width="200px"></p>
+				</div>
+			</div>
+		</div>
+		 <button class="custom-btn btn-8"><span>결과 확인하기</span></button>
+		<div class="p-center"><img src="under.png" height="200px"></div>
+	</section>
+
+
+	<section class="text-center bg-black pad">
+		<div class="col-6">
+				<div class="row text-center flexbox2">
+					<div class="col-8">
+					<p><img src="cha1.png" width="100px"></p>
+					</div>
+			
+					<div class="col-1">
+						<div class="bubble p-center">1~3개 | 이 정도면 안심해도 돼</div>
+					</div>
+				</div>
+
+				<div class="row text-center flexbox2">
+					<div class="col-2">
+						<div class="bubble3 p-center">3-6개 | 조금 의심되는 편이야</div>
+					</div>
+			
+					<div class="col-1">
+						<p><img src="cha3.png" width="100px"></p>
+					</div>
+				</div>
+
+				<div class="row text-center flexbox2">
+					<div class="col-1">
+					<p><img src="cha2.png" width="100px"></p>
+					</div>
+			
+					<div class="col-2">
+						<div class="bubble2 p-center text-white">7-9개 | 너도 혹시... ...</div>
+					</div>
+				</div>		
+		</div>
+	</section>
+
+	<section class="bg-black background-wrap2 full">
+		<div class="row text-center">
+		  	<img src="cha.png" width="200px" height="200px">
+		</div>
+	</section>
+	
+	<section class="bg-black">
+		<div class="row text-center text-white">
+		  <div class="col-6">
+			  <p>아마 대다수의 사람들이 ADHD에 대해 오해하고 있을 거야.<br>ADHD에 대해 정확히 알아보자!<br><br><br></p>
+		</div>
+	</section> 
+
+	<section class="bg-white col-6 pad pad-u">
+		<div class="row text-center flexbox bg-white">
+			<div class="col-3">
+				<div class="row text-center flexbox" style="width: 450px;">
+					<div class="col-1 p-center">
+					<p><img src="cha3.png" width="100px"></p>
+					</div>
+			
+					<div class="col-5">
+						<div class="bubble4 p-center" style="font-family: GmarketSansMedium;">ADHD에 관한<br>기존의 오해를 알려줄게!</div>
+					</div>
+				</div>
+
+				<div class="p-center"><img src="memo1.png" width="500px"></div>
+				<p><br>❗️ 남아에게 흔히 보이는 증상이지만<br>성인ADHD | 여아에게는 발현하는 모습이 달라!</p>
+			</div>
+			
+			<hr class="updown">
+
+			<div class="col-3">
+				<div class="row text-center flexbox" style="width: 450px;">
+					<div class="col-4">
+						<div class="bubble5 p-center text-white" style="font-family: GmarketSansMedium;">성인 ADHD란 바로바로…</div>
+					</div>
+					
+					<div class="col-2 p-center">
+					<p><img src="cha1.png" width="100px"></p>
+					</div>
+				</div>
+				<div class="p-center"><img src="memo2.png" width="500px"></div>
+				<p><br>❗️ 겉으로는 조용하지만,<br>속에서는 그 누구보다 시끄러운 모습으로 발현돼!</p>
+			</div>
+		</div>
+	</section> 
+	
+	<section class="bg-black">
+		<div class="row text-center text-white">
+		  <div class="col-6">
+			  <p><br><br><br>그렇다면 이걸 고치려면 어떻게 해야 할까? <br>내가 알려줄게!<br><br><br></p>
+			</div>
+		</div>
+	</section> 
+
+	<section class="bg-black">
+		<div class="wrap">
+		  		<div class="po-ab2" style="z-index: 3; top: 168px; left: 800px;"><img src="go.png" style="width: 200px; height: 200px;"></div>
+		  		<div class="po-ab2" style="z-index: 3; top: 350px; left: 700px;"><img src="go.png" style="width: 200px; height: 200px; transform: rotate(90deg);"></div>
+		  		<div class="po-ab2" style="z-index: 3; top: 140px; left: 650px;"><img src="cha.png" style="width: 170px; height: 170px;"></div>
+		  		<div class="po-ab2" style="z-index: 3; top: 400px; left: 900px;"><img src="cha3.png" style="width: 130px; height: 130px;"></div>
+		</div>
+		<div class="col-6">
+			<div class="row flexbox2">
+				<div class="col-2">
+					<p><img src="cc.png" width="200px"></p>
+				</div>
+
+				<div class="col-3">
+					<div class="box2">
+						<p>STEP 1</p>
+						<hr color="black" size="2px">
+						<p style="font-size:10pt">가까운 정신과에 내진하여 의사와의 상담을 거친 후, ADHD 검사일자를 잡아!</p>
+						<p class="text-white" style="font-size: 6pt;">*병원에 따라 검사를 하지 않고 의사 재량에 따라 ADHD라고 판단하는<br>경우도 있습니다.<br>*병원에 가기 전 미리 검사일자를 잡고 방문하여도 좋습니다</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row flexbox2">
+				<div class="col-3">
+					<div class="box2">
+						<p>STEP 2</p>
+						<hr color="black" size="2px">
+						<p style="font-size:10pt">검사일에 다시 방문하여 ADHD 검사(*CAT)를 받으면 돼. 보험 적용이 되지 않아 보통 65,000원 - 120,000원으로, 병원마다 가격 차이가 있어.</p>
+					</div>
+				</div>
+				<div class="col-2">
+						<p><img src="cc.png" width="200px"></p>
+				</div>
+			</div>
+			
+			<div class="row flexbox2">
+				<div class="col-2">
+				<p><img src="cc.png" width="200px"></p>
+				</div>
+			
+				<div class="col-3">
+					<div class="box2">
+						<p>STEP 3</p>
+						<hr color="black" size="2px">
+						<p style="font-size:10pt">검사 결과 시 ADHD로 판명되었다면 의사와의 상담 후 ADHD 치료제 ‘콘서타’라는 약의 정량을 찾아가는 시간을 경험할 거야.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-gradient" style="height: 300px"> 
+		<div class="row text-center">
+		  <div class="pad-u">
+				<div class="box2 p-center sha">
+						<p style="font-size:10pt">왜냐하면 약효, 부작용은 사람마다 다르고<br>각자에게 맞는 정량도 다르거든. <br>보통 한달 정도의 시간이 걸려. <br>이후에는 꾸준히 약 처방만 받으면 돼!</p>
+					</div>
+				</div>
+			</div>
+
+		  </div>
+		</div>
+	</section>
+
+	<section class="bg-white full background-wrap3">
+		<div class="row text-center">
+		  <div class="col-6 all-center">
+			  <p><br><br><br>지금까지 나는 왜 이럴까 자책한 과거는 그만! <br>약물 치료와 라이프 스타일의 변화로 금세 호전될 수 있는 병이야! <br><br> 검사 결과가 ADHD가 아니더라도<br>네가 알지 못했던 다른 마음의 상처를 알게 되고<br>치료받을 수 있는 좋은 시간이 될 거야. <br><br><br>언제나 길 위에서 응원할게! <br><br><br></p>
+			</div>
+		</div>
+	</section> 
+	
+	<footer class="bg-black" style="height: 100px">
+		<div class="row col-6 text-white text-center" style="width: 1000px">
+			Copyright, All rights Reserved<br>
+			22110083 박채린<br>
+			후원: 우리은행 1002-351-24... ...
+		</div>
+	</footer>
+</body>
+</html>
